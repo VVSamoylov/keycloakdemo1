@@ -2,10 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import Keycloak from "keycloak-js";
 
 const client = new Keycloak({
-  url: import.meta.env.VITE_KEYCLOAK_URL,
-  realm: import.meta.env.VITE_KEYCLOAK_REALM,
-  clientId: import.meta.env.VITE_KEYCLOAK_CLIENT,
+  url: import.meta.env.VITE_KEYCLOAK_URL, //url до сервера авторизации
+  realm: import.meta.env.VITE_KEYCLOAK_REALM, // название realm
+  clientId: import.meta.env.VITE_KEYCLOAK_CLIENT, // название клиента
 });
+
+
 
 const useAuth = () => {
   const isRun = useRef(false);
